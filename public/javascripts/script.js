@@ -1,15 +1,31 @@
 
 const consts = function () {
+
+    let getToday = function ()
+    {
+        let date = new Date();
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
+        if (month < 10) month = "0" + month;
+        if (day < 10) day = "0" + day;
+        return year + "-" + month + "-" + day;
+    }
     return{
         invisible: "d-none",
-        api_key: "fTmf3bnTh3b0mRfIVK1Q1zQS7bF6xIqYalgNrFDl"
+        api_key: "fTmf3bnTh3b0mRfIVK1Q1zQS7bF6xIqYalgNrFDl",
+        username: ()=> document.getElementById("user").value.trim(),
+        today: getToday,
     }
 }()
 
 
 document.addEventListener("DOMContentLoaded", function() {
+
+    document.getElementById("start-date").value = consts.today();
+    document.getElementById("end-date").value = consts.today();
+
     document.getElementById("login-form").addEventListener("submit",(event)=>{
-        console.log("test");
         event.preventDefault();
         document.getElementById("loginpanel").classList.add(consts.invisible)
         document.getElementById("imagepannel").classList.remove(consts.invisible)

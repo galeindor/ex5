@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 
 <head>
   <title>Express</title>
@@ -11,7 +11,7 @@
 <body>
 
 <!--login form-->
-<div class="loginpanel" id="loginpanel">
+<div class="loginpanel d-none" id="loginpanel">
   <form id="login-form">
     <div class="txt">
       <input id="user" type="text" placeholder="Username" />
@@ -23,10 +23,24 @@
   </form>
 </div>
 
-<div id="imagepannel" class="d-none">
-  <div class="image_place">
-    <img id="nasa_picture" width="500" height="500">
+<div id="imagepannel" class="">
+  <div class="container mt-3">
+    <form>
+        <div class="row-6">
+          <label for="start-date" class="entypo-search"> Start date: </label>
+          <input id="start-date" type="date">
+        </div>
+      <br>
+        <div class="row-6">
+          <label for="end-date" class="entypo-search"> End date: </label>
+          <input id="end-date" type="date">
+        </div>
+    </form>
+    <div class="row image_place">
+      <img src="" id="nasa_picture" width="500" height="500" alt="">
+    </div>
   </div>
+
 </div>
 
 </body>
